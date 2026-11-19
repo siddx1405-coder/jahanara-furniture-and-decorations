@@ -6,7 +6,7 @@ import wallDecoration from "./assets/portfolio/wall-decoration.jpg";
 import carpet from "./assets/portfolio/carpet.jpg";
 import bedFlooring from "./assets/portfolio/bed-flooring.jpg";
 import curtains from "./assets/portfolio/curtains.jpg";
-import curvedSofa from "./assets/portfolio/curved-sofa.jpg";
+import parquetFlooring from "./assets/portfolio/parquet-flooring.png";
 import majlisFlooring from "./assets/portfolio/majlis-flooring.jpg";
 import completeInterior from "./assets/portfolio/complete-interior.jpg";
 
@@ -80,6 +80,8 @@ const content = {
       ["الأرضيات الخشبية", "دفء الخشب وأناقة التشطيبات الاحترافية.", "wood"],
       ["الديكور الداخلي", "تصميم وتنفيذ متكامل لمساحات متناغمة.", "decor"],
       ["خزائن المطابخ والغرف", "حلول تخزين ذكية مصممة خصيصاً لمساحتك.", "cabinet"],
+      ["أعمال الجبس والأسقف المستعارة", "تصميم وتركيب الجبس والأسقف المستعارة بتفاصيل عصرية ومتناسقة.", "gypsum"],
+      ["أعمال الصيانة", "خدمات صيانة وتشطيب متكاملة للحفاظ على جودة المساحات ومظهرها.", "maintenance"],
     ],
     portfolioKicker: "مختارات من أعمالنا",
     portfolioTitle: "مساحات صُممت لتُلهم",
@@ -94,7 +96,7 @@ const content = {
       "سجاد ومجلس",
       "أرضيات خشبية",
       "ستائر",
-      "كنب منحني",
+      "أرضيات باركيه",
       "مجلس وأرضيات",
       "غرفة معيشة متكاملة",
     ],
@@ -150,6 +152,8 @@ const content = {
       ["Wood Flooring", "The warmth of wood with expert finishing.", "wood"],
       ["Interior Decoration", "Complete design and execution for harmonious spaces.", "decor"],
       ["Kitchen & Room Cabinets", "Smart storage designed specifically for your space.", "cabinet"],
+      ["Gypsum & False Ceilings", "Modern gypsum and false-ceiling design and installation.", "gypsum"],
+      ["Maintenance Works", "Complete maintenance and finishing services to keep every space at its best.", "maintenance"],
     ],
     portfolioKicker: "SELECTED PROJECTS",
     portfolioTitle: "Spaces designed to inspire",
@@ -165,7 +169,7 @@ const content = {
       "Carpet & majlis",
       "Wood flooring",
       "Curtains",
-      "Curved sofa",
+      "Parquet flooring",
       "Majlis & flooring",
       "Complete living room",
     ],
@@ -239,6 +243,18 @@ const servicePaths: Record<string, ReactNode> = {
       <path d="M5 3h14v18H5zM12 3v18M8.5 11h.01M15.5 11h.01" />
     </>
   ),
+  gypsum: (
+    <>
+      <path d="M3 6h18M5 6v5h14V6M8 11v7m8-7v7M5 18h14" />
+      <path d="M12 14v4M9 16h6" />
+    </>
+  ),
+  maintenance: (
+    <>
+      <path d="M14.7 6.3a4 4 0 0 0-5-5L12 3.6l-2.4 2.4-2.3-2.3a4 4 0 0 0 5 5l7.4 7.4a2 2 0 0 1-2.8 2.8l-7.4-7.4" />
+      <path d="m5 16-2 2 3 3 2-2M3 21l4-4" />
+    </>
+  ),
 };
 
 const images = [
@@ -249,7 +265,7 @@ const images = [
   carpet,
   bedFlooring,
   curtains,
-  curvedSofa,
+  parquetFlooring,
   majlisFlooring,
   livingRoom,
 ];
@@ -513,7 +529,7 @@ export default function App() {
           <div className="mx-auto grid max-w-[1440px] lg:grid-cols-2">
             <div className="relative min-h-[520px] lg:min-h-[720px]">
               <img
-                src={curvedSofa}
+                src={parquetFlooring}
                 alt={t.projectLabels[7]}
                 className="absolute inset-0 size-full object-cover"
               />
@@ -584,7 +600,9 @@ export default function App() {
                   <Icon className="size-5">
                     <path d="M6.6 3h3l1.5 4-2 1.4a15.5 15.5 0 0 0 6.5 6.5l1.4-2 4 1.5v3a3 3 0 0 1-3 3A15 15 0 0 1 3.6 6a3 3 0 0 1 3-3Z" />
                   </Icon>
-                  +974 7779 7456
+                  <bdi dir="ltr" className="inline-block whitespace-nowrap">
+                    +974 7779 7456
+                  </bdi>
                 </a>
               </div>
             </div>
@@ -610,7 +628,9 @@ export default function App() {
                 </Icon>
                 <span>
                   <strong>{t.call}</strong>
-                  <small dir="ltr">+974 7779 7456</small>
+                  <small dir="ltr" className="whitespace-nowrap text-left">
+                    <bdi dir="ltr">+974 7779 7456</bdi>
+                  </small>
                 </span>
               </a>
               <a href="mailto:jahanaradecoration456@gmail.com" className="contact-card">
